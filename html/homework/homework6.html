@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap demo</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+
+<form autocomplete="off">
+
+<div class="mb-3">
+	<label for="name" class="form-label">이름</label>
+	<input type="text" class="form-control" id="name" name="name">
+</div>
+
+<br>
+
+<select class="form-select" aria-label="Default select example" id="country">
+	<option value="">국적을 선택해주세요</option>
+	<option value="1">korea</option>
+	<option value="2">usa</option>
+	<option value="3">japan</option>
+	<option value="4" >china</option>
+</select>
+
+<br>
+
+취미
+<div class="form-check">
+	<input class="form-check-input" type="checkbox" value="run" name="hobby" id="run">
+	<label class="form-check-label" for="run">런닝</label>
+</div>
+<div class="form-check">
+	<input class="form-check-input" type="checkbox" value="swim" name="hobby" id="swim">
+	<label class="form-check-label" for="swim">수영</label>
+</div>
+<div class="form-check">
+	<input class="form-check-input" type="checkbox" value="reading" name="hobby" id="reading">
+	<label class="form-check-label" for="reading">독서</label>
+</div>
+
+<br>
+
+성별
+<div class="form-check">
+	<input class="form-check-input" type="radio" value="male" name="gender" id="male">
+	<label class="form-check-label" for="male">남성</label>
+</div>
+<div class="form-check">
+	<input class="form-check-input" type="radio" value="female" name="gender" id="female">
+	<label class="form-check-label" for="female">여성</label>
+</div>
+
+<br>
+	<div class="mb-3">
+		<button type="button" class="btn btn-primary" id="btnJquery">jquery</button>
+		<button type="button" class="btn btn-primary" id="btnJavascript">javascript</button>
+	</div>
+
+</form>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+	
+// jquery	
+    	$("#btnJquery").on("click", function(){
+			
+    		// input type=text    		
+   			alert( $.trim($("#name").val()) );
+    		$("#name").val("전지현")
+    		alert( $.trim($("#name").val()) );
+    	
+    		// select
+    		alert("country: " + $("#country").val());
+     		$("#country").val("4").prop("selected", true);
+    		alert("country: " + $("#country").val());
+    		
+    		// checkbox
+    		var arrayHobbyJquery = new Array();
+    		
+	        for (var i=0; i<$("input:checkbox[name=hobby]").length; i++) {
+				if( $("input:checkbox[name=hobby]").eq(i).is(":checked") == true){
+					alert( $("input:checkbox[name=hobby]").eq(i).val() );
+					arrayHobbyJquery.push( $("input:checkbox[name=hobby]").eq(i).val() );
+				}
+	        }
+	        
+// 	        $("input:checkbox[name=hobby]").each(function (index) {
+// 	        	if($(this).is(":checked")==true){
+// 	            	alert($(this).val());
+// 	            	arrayHobbyJquery.push($(this).val());
+// 	            }
+// 	        });
+	        
+	        for (var i=0; i<arrayHobbyJquery.length; i++) {
+	        	console.log(arrayHobbyJquery[i]);
+	        }
+	        
+	        $("input:checkbox[name=hobby]").eq(0).prop("checked", false);
+	        $("input:checkbox[name=hobby]").eq(2).prop("checked", true);
+	        
+// 	        $("#run").prop("checked", false);
+// 	        $("#reading").prop("checked", true);
+
+			// radio
+			alert( $('input:radio[name=gender]:checked').val() );
+	        $("input:radio[name=gender]").eq(0).prop("checked", false);
+	        $("input:radio[name=gender]").eq(1).prop("checked", true);
+	        alert( $('input:radio[name=gender]:checked').val() );
+			
+	        
+    	});
+    	
+
+    	
+// javascript    	
+// 		document.getElementById("btnJavascript").onclick = function(){    	
+    	document.getElementById("btnJavascript").addEventListener("click", function() {
+			
+    		// input type=text
+    		alert( document.getElementById("name").value.trim() );
+    		document.getElementById("name").value = "전지현";
+    		alert( document.getElementById("name").value.trim() );
+    		
+    		// select
+    		alert( document.getElementById("country").value );
+    		document.getElementById("country").options[3].selected = true;
+    		alert( document.getElementById("country").value );
+    		
+    		//checkbox
+    		var arrayHobbyJavascript = new Array();
+	    	  
+	        for (var i=0; i<document.getElementsByName("hobby").length; i++) {
+	            if (document.getElementsByName("hobby")[i].checked == true) {
+	                alert(document.getElementsByName("hobby")[i].value);
+	                arrayHobbyJavascript.push(document.getElementsByName("hobby")[i].value);
+	            }
+	        }
+	        
+	        for (var i=0; i<arrayHobbyJavascript.length; i++) {
+	        	console.log(arrayHobbyJavascript[i]);
+	        }
+	        
+	        // 선택된 체크박스의 인텍스 값 가져오기
+	        
+			document.getElementsByName("hobby")[0].checked = false;
+			document.getElementsByName("hobby")[2].checked = true;
+
+			// radio
+			alert( document.querySelector("input[name='gender']:checked").value );
+			document.getElementsByName("gender")[0].checked = false;
+			document.getElementsByName("gender")[1].checked = true;
+		
+    	});
+    	
+
+	</script>
+	
+	
+	</body>
+</html>
