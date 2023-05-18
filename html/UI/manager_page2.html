@@ -101,50 +101,74 @@
         <section id="section">
             <div id="search">
                 <h2>국가 코드관리</h2>
-            </div>
-            <div id="full_search_box">
-                <div class="mb-3 box_width">
-                    <label for="exampleFormControlInput1" class="form-label">Seq<span class="req">*</span></label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="자동생성" disabled>
-                </div>
-                <div class="mb-3 box_width">
-                    <label for="exampleFormControlInput1" class="form-label">국가 이름<span class="req">*</span></label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="자동생성">
-                </div>
-                <div class="mb-3 box_width">
-                    <label for="exampleFormControlInput1" class="form-label">국가 이름(한글)</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                </div>
-                <div class="mb-3 box_width">
-                    <label for="exampleFormControlInput1" class="form-label">국가 코드(2자리)<span class="req">*</span></label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                </div>
-                <div class="mb-3 box_width">
-                    <label for="exampleFormControlInput1" class="form-label">사용여부<span class="req">*</span></label><br>
-                    <select class="form-select box_width form-select2" aria-label="Default select example">
-                        <option value="1">Y</option>
-                        <option value="2">N</option>
+                <div id="full_search_box">
+                <form class="row g-3 needs-validation" id="full_search_box" novalidate>
+                    <div class="col-md-4 box_width">
+                      <label for="validationCustom01" class="form-label">seq<span class="req">*</span></label>
+                      <input type="text" class="form-control" id="validationCustom01" value="" placeholder="자동생성" disabled>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-4 box_width">
+                      <label for="validationCustom02" class="form-label">국가 이름<span class="req">*</span></label>
+                      <input type="text" class="form-control" id="validationCustom02" value="" required>
+                      <div class="invalid-feedback">
+                        Please provide a valid city.
+                      </div>
+                    </div>
+                    <div class="col-md-6 box_width">
+                        <label for="validationCustom03" class="form-label">국가 이름(한글)</label>
+                        <input type="text" class="form-control" id="validationCustom03" >
+                    </div>
+                    <div class="col-md-6 box_width">
+                      <label for="validationCustom03" class="form-label">국가 코드(2자리)<span class="req">*</span></label>
+                      <input type="text" class="form-control" id="validationCustom03" required>
+                      <div class="invalid-feedback">
+                        Please provide a valid city.
+                      </div>
+                    </div>
+                    <div class="col-md-3 box_width">
+                      <label for="validationCustom04" class="form-label">사용여부<span class="req">*</span></label>
+                      <select class="form-select box_width form-select2" id="validationCustom04" required>
+                        <option selected disabled value="">선택</option>
+                        <option>Y</option>
+                        <option>N</option>
                       </select>
+                      <div class="invalid-feedback">
+                        Please select a valid state.
+                      </div>
+                    </div>
+                    <div class="col-md-3 box_width">
+                      <label for="validationCustom05" class="form-label">설명</label>
+                      <textarea class="form-control" id="explanation" rows="3" name="explanation"></textarea>
+                    </div>
+                    <div class="col-md-6 box_width en">
+                        <label for="validationCustom03" class="form-label">국가 이름(영문)</label>
+                        <input type="text" class="form-control" id="validationCustom03">
+                      </div>
+                      <div class="col-md-6 box_width">
+                        <label for="validationCustom03" class="form-label">국가 코드(3자리)<span class="req">*</span></label>
+                        <input type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                          Please provide a valid city.
+                        </div>
+                      </div>
+                      <div class="col-md-6 box_width">
+                        <label for="validationCustom03" class="form-label">순서<span class="req">*</span></label>
+                        <input type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                          Please provide a valid city.
+                        </div>
+                      </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">등록</button>
+                        <button type="button" class="btn btn-primary" id="reset">초기화</button>
+                      </div>
+                      <a href="#" class="bookmark"><i class="fa-regular fa-bookmark"></i></a>
+                      <a href="manager_page.html"><i class="fa-solid fa-bars back_btn"></i></a>
+                  </form>
                 </div>
-                <div class="mb-3 box_width">
-                    <label for="exampleFormControlTextarea1" class="form-label">설명</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
-                  <div class="mb-3 box_width">
-                    <label for="exampleFormControlInput1" class="form-label">국가 이름(영문)</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                </div>
-                <div class="mb-3 box_width">
-                    <label for="exampleFormControlInput1" class="form-label">국가 코드(3자리)<span class="req">*</span></label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                </div>
-                <div class="mb-3 box_width">
-                    <label for="exampleFormControlInput1" class="form-label">순서<span class="req">*</span></label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                </div>
-                <a href="#" class="bar_menu"><i class="fa-solid fa-bars"></i></a>
-                <a href="#" class="bookmark"><i class="fa-regular fa-bookmark"></i></a>
-                <a href="manager_page.html"><i class="fa-solid fa-arrow-left back_btn"></i></a>
             </div>
         </section>
     </div>
@@ -159,6 +183,8 @@
             <p>Copyright 2014. My Inc. all rights reserved</p>
         </div>
     </footer>
+
+    
 
 
 
