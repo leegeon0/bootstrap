@@ -81,7 +81,7 @@ a{text-decoration : none;}
 
 #side_tab{
 	width: 300px;
-	height: 700px;
+	height: 720px;
 	background-color: #111;
 	padding-top: 15px;
 	box-sizing: border-box;
@@ -116,7 +116,7 @@ a{text-decoration : none;}
 
 #section{
 	width: 100%;
-	height: 700px;
+	height: 720px;
 	padding-top: 15px;
 	box-sizing: border-box;
 	background-color: #111111;
@@ -213,6 +213,7 @@ a{text-decoration : none;}
 	width: 100%;
 	height: 100px;
 	background-color: rgba(0,0,255,.1);
+	margin-top: 20px;
 
 }
 .footer1{
@@ -225,4 +226,72 @@ a{text-decoration : none;}
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+/* 2페이지 영역 */
+
+#full_search_box{
+	width: 100%;
+	height: 655px;
+	padding: 10px 0 0 20px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	position: relative;
+}
+.en{
+	margin-top: 187px;
+}
+
+.box_width{
+	width: 720px;
+}
+.form-select2{
+	margin: 0;
+	width: 705px;
+}
+.bar_menu{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	font-size: 25px;
+	color: #fff;
+	background-color: brown;
+}
+.bookmark{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	font-size: 25px;
+	width: 30px;
+	height: 30px;
+	background-color: brown;
+	color: #fff;
+}
+.back_btn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 25px;
+	width: 30px;
+	height: 30px;
+	background-color: brown;
+	color: #fff;
+}
+.req{
+	color: rgba(255, 100, 100, 1);
+}
+.row{
+	flex-direction: column;
 }
